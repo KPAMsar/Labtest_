@@ -1,0 +1,14 @@
+extend type Query {
+    ctscans: [User!]! @all
+}
+
+type Mutation {
+    createUser( name: String, email:String, password:String): User! @create
+}
+
+type CTScan {
+    id:ID!,
+    name: String,
+     email:String, 
+     password:String
+}

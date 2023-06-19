@@ -2,6 +2,19 @@ type Query {
     ultrasound: [UltraSonicScan!]! @all
 }
 
+type Mutation{
+    createUltraSonicScan(
+        user_id: String
+        obstetric: String
+        abdioninal: String
+        pelvis: String
+        prostrate: String
+        breast: String
+        thyroid: String
+    ):UltraSonicScan! @create
+}
+
+
 type UltraSonicScan {
     id: ID!
     user_id: String
