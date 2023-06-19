@@ -1,0 +1,35 @@
+type Query {
+    xrays: [Xray!]! @all
+}
+
+type Xray {
+    id: ID!,
+        user_id: String, 
+        chest: String, 
+        lumbo_sacral_vertebrae: String, 
+        shoulder_joint: String, 
+        pelvic_joint: String, 
+        humerus: String, 
+        fingers: String, 
+        cervical_vertebrae: String, 
+        thoraco_lumbar_vertebrae: String, 
+        elbow_joint: String, 
+        hip_joint: String, 
+        radius_or_ulner: String, 
+        toes: String, 
+        thoracic_vertebrae: String, 
+        wrist_joint: String, 
+        knee_joint: String, 
+        femoral: String, 
+        foot: String, 
+        lumvar_vertebrae: String, 
+        thoracic_inlet: String, 
+        sacro_iliac_joint: String, 
+        ankle: String, 
+        tibia_fibula: String,
+        
+}
+
+        
+        
+

@@ -1,0 +1,14 @@
+type Query {
+    ultrasound: [UltraSonicScan!]! @all
+}
+
+type UltraSonicScan {
+    id: ID!
+    user_id: String
+    obstetric: String
+    abdioninal: String
+    pelvis: String
+    prostrate: String
+    breast: String
+    thyroid: String
+}

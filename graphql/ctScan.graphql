@@ -1,0 +1,8 @@
+type Query {
+    ctscans: [CTScan!]! @all
+}
+
+type CTScan {
+    id: ID!
+    name: String
+}
