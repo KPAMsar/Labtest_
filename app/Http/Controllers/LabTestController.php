@@ -20,17 +20,39 @@ class LabTestController extends Controller
         try {
             $data = DB::transaction(function () use ($request) {
                 $xray = Xray::create($request->only([
-                    'user_id',
-                    'chest',
-                    'lumbo_sacral_vertebrae',
-                    // ... rest of the attributes
+                    'user_id' => $request->user_id,
+                    'chest' => $request->chest,
+                    'lumbo-sacral-vertebrae' => $request->lumbo_sacral_vertebrae,
+                    'shoulder-joint' => $request->shoulder_joint,
+                    'pelvic-joint' => $request->pelvic_joint,
+                    'humerus' => $request->humerus,
+                    'fingers' => $request->fingers,
+                    'cervical-vertebrae' => $request->cervical_vertebrae,
+                    'thoraco-lumbar-vertebrae' => $request->thoraco_lumbar_vertebrae,
+                    'elbow-joint' => $request->elbow_joint,
+                    'hip-joint' => $request->hip_joint,
+                    'radius-or-ulner' => $request->radius_or_ulner,
+                    'toes' => $request->toes,
+                    'thoracic-vertebrae' => $request->thoracic_vertebrae,
+                    'wrist-joint' => $request->wrist_joint,
+                    'knee-joint' => $request->knee_joint,
+                    'femoral' => $request->femoral,
+                    'foot' => $request->foot,
+                    'lumvar-vertebrae' => $request->lumvar_vertebrae,
+                    'thoracic-inlet' => $request->thoracic_inlet,
+                    'sacro-iliac-joint' => $request->sacro_iliac_joint,
+                    'ankle' => $request->ankle,
+                    'tibia-fibula' => $request->tibia_fibula,
                 ]));
 
                 $ultrasound = UltrasonicScan::create($request->only([
-                    'user_id',
-                    'obstetric',
-                    'abdioninal',
-                    // ... rest of the attributes
+                    'user_id' => $request->user_id,
+                    'obstetric' => $request->obstetric,
+                    'abdioninal' => $request->abdioninal,
+                    'pelvis' => $request->pelvis,
+                    'prostrate' => $request->prostrate,
+                    'breast' => $request->breast,
+                    'thyroid' => $request->thyroid,
                 ]));
 
                 $mri = MRI::create([
@@ -53,7 +75,7 @@ class LabTestController extends Controller
 
                 $patient = User::findOrFail($request->user_id);
                 $data = [
-                    'name'=>'kpam',
+                    'name'=>$request->name,
                     'patient' => $patient,
                     'mris' => $patientMri,
                     'ctscans' => $patientCts,
