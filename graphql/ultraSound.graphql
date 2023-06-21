@@ -1,5 +1,5 @@
-type Query {
-    ultrasound: [UltraSonicScan!]! @all
+extend type Query {
+    ultrasounds: [UltraSonicScan!]! @all
 }
 
 type Mutation{

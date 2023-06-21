@@ -1,3 +1,4 @@
-#import xrays.graphql
+#import user.graphql
 #import ctScan.graphql
-#import user.graphql 
+#import ultraSound.graphql
+#import xray.graphql
